@@ -1,6 +1,17 @@
-import React, { ElementType } from "react";
+import React from "react";
 import { Wrapper } from "./Global-styles";
 import { GoogleMap, Marker, InfoWindow, useJsApiLoader } from "@react-google-maps/api";
+import {useQuery} from "react-query"
+
+export type WeatherType = {
+  temp: number;
+  text: string;
+};
+
+export type Coordinate = {
+location:google.maps.LatLngLiteral
+};
+
 
 const App: React.FC = () => {
   const containerStyle = {
